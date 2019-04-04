@@ -4,7 +4,7 @@
 
 项目预览图如下
 
-![page.png](https://i.loli.net/2019/04/04/5ca5aef27b9f4.png)
+![page.png](https://i.loli.net/2019/04/04/5ca5cdc8ed95d.png)
 
 ## Project setup
 ```
