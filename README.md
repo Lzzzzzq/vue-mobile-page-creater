@@ -2,7 +2,9 @@
 
 基于 vue 的移动端页面可视化搭建工具（仅思路）
 
-![page.png](https://i.loli.net/2019/04/04/5ca5ad476bf58.png)
+项目预览图如下
+
+![page.png](https://i.loli.net/2019/04/04/5ca5aef27b9f4.png)
 
 ## Project setup
 ```
