@@ -74,6 +74,13 @@ export default {
           this.edit = false
           this.editIndex = -1
           break
+        case 'handleCloseEdit':
+          /**
+           * 关闭了编辑模式
+           */
+          this.edit = false
+          this.editIndex = -1
+          break
         default:
           break
       }

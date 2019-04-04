@@ -4,7 +4,8 @@
       <iframe src="/#/view" frameborder="0" class="viewContent" @load="onLoad" ref="frame"></iframe>
       <div class="viewPageBtnWrap">
         <div class="viewPageBtn" @click="handleGetConfig">获取配置</div>
-        <div class="viewPageBtn" @click="handleChangeTheme">切换主题</div>
+        <div class="viewPageBtn" @click="handleChangeTheme">{{dark ? '白版' : '黑版'}}</div>
+        <div class="viewPageBtn" @click="handleChangeEditStatus">{{edit ? '预览' : '编辑'}}</div>
       </div>
     </div>
   </div>
@@ -19,6 +20,12 @@ export default {
     },
     pushMsg: {
       type: Function
+    }
+  },
+  data () {
+    return {
+      dark: false,
+      edit: true
     }
   },
   methods: {
@@ -39,8 +46,25 @@ export default {
      * 切换主题
      */
     handleChangeTheme: function () {
+      this.dark = !this.dark
       this.pushMsg({
-        type: 'changeTheme'
+        type: 'changeTheme',
+        data: {
+          dark: this.dark
+        }
+      })
+    },
+
+    /**
+     * 开关预览模式
+     */
+    handleChangeEditStatus: function () {
+      this.edit = !this.edit
+      this.pushMsg({
+        type: 'changeEditStatus',
+        data: {
+          edit: this.edit
+        }
       })
     }
   }

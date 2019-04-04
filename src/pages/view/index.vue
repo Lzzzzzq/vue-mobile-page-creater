@@ -1,6 +1,6 @@
 <template>
   <div :class="{
-    black: black
+    black: dark
   }">
     <div class="viewWrap globalBg">
       <draggable
@@ -19,7 +19,7 @@
               :key="index"
               @click.native.stop="handleChangeProps(index)"
               :class="{
-                'viewCptItem': true,
+                'viewCptItem': edit,
                 'active': activeIndex === index
               }"
             ></component>
@@ -43,7 +43,8 @@ export default {
       drag: false,
       config: [],
       activeIndex: -1,
-      black: false
+      dark: false,
+      edit: true
     }
   },
   computed: {
@@ -51,7 +52,7 @@ export default {
       return {
         animation: 200,
         group: 'description',
-        disabled: false,
+        disabled: !this.edit,
         ghostClass: 'ghost'
       }
     }
@@ -106,7 +107,16 @@ export default {
           }
           break
         case 'changeTheme':
-          this.black = !this.black
+          this.dark = data.data.dark
+          break
+        case 'changeEditStatus':
+          this.edit = data.data.edit
+          if (!data.data.edit) {
+            this.activeIndex = -1
+            this.pushMsg({
+              type: 'handleCloseEdit'
+            })
+          }
           break
         default:
           break
@@ -124,6 +134,7 @@ export default {
      * 修改 props
      */
     handleChangeProps: function (index) {
+      if (!this.edit) return
       this.activeIndex = index
       this.pushMsg({
         type: 'changeProps',

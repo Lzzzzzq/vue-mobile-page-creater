@@ -11,7 +11,6 @@
     <template v-if="checkType(value) === 'boolean'">
       <div class="changePropsItemKey" v-if="name">{{name}}</div>
       <a-switch :defaultChecked="value" @change="$emit('input', $event)"/>
-      <!-- <a-input :value="value" @input="$emit('input', $event.target.value)"/> -->
     </template>
 
     <!-- 属性为 object -->
@@ -72,7 +71,9 @@ export default {
      * 数组移除单条
      */
     handleRemoveItem: function (index) {
-      this.$emit('input', this.value.splice(index, 1))
+      let newValue = [].concat(this.value)
+      newValue.splice(index, 1)
+      this.$emit('input', newValue)
     }
   }
 }
