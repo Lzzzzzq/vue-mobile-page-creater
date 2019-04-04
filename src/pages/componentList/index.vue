@@ -1,13 +1,15 @@
 <template>
   <div class="componentListWrap">
-    <div class="cptListWrap">
-      <div class="cptListWrapTitle">组件</div>
-      <div class="cptList">
-        <div class="cptItemWrap" v-for="(item, index) in components.container" :key="index" @click="handleAddComponent(item)">
-          <div class="cptItemCont">{{item.name}}</div>
-        </div>
-      </div>
-    </div>
+      <a-card :title="typeItem.name" v-for="typeItem in components" :key="typeItem.name">
+        <a-card-grid
+          v-for="cptItem in typeItem.child"
+          :key="cptItem.name"
+          class="componentListItem"
+          @click.native="handleAddComponent(cptItem)"
+        >
+          {{cptItem.name}}
+        </a-card-grid>
+      </a-card>
   </div>
 </template>
 

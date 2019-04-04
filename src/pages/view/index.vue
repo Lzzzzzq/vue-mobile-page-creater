@@ -99,6 +99,7 @@ export default {
           break
         case 'delCpt':
           if (this.activeIndex >= 0) {
+            this.drag = true
             this.config.splice(this.activeIndex, 1)
             this.activeIndex = -1
             this.pushMsg({

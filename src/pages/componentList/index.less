@@ -1,44 +1,26 @@
 .componentListWrap {
   flex: 1;
 
-  .cptListWrap {
-    background-color: #f5f5f5;
+  .ant-card-head-title {
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    font-size: 15px;
+    text-align: center;
+  }
+  .ant-card {
+    margin-top: 12px;
 
-    .cptListWrapTitle {
-      height: 40px;
-      line-height: 40px;
-      font-size: 16px;
-      padding: 0 16px;
-      background-color: #fff;
+    &:first-child {
+      margin-top: 0;
     }
-    .cptList {
-      display: flex;
-
-      .cptItemWrap {
-        position: relative;
-        flex: 0 0 33.3%;
-        padding: 10% 0;
-
-        .cptItemCont {
-          position: absolute;
-          top: 10px;
-          left: 10px;
-          right: 10px;
-          bottom: 10px;
-          border: 1px solid #ddd;
-          border-radius: 6px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          box-sizing: border-box;
-          cursor: pointer;
-          transition: all 0.2s;
-
-          &:hover {
-            background-color: #ddd;
-          }
-        }
-      }
-    }
+  }
+  .componentListItem {
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    text-align: center;
+    cursor: pointer;
+    font-size: 13px;
   }
 }
