@@ -1,0 +1,57 @@
+.viewPageWrap {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+
+  .viewWrap {
+    position: relative;
+    padding: 80px 10px;
+    border-radius: 40px;
+    background-color: black;
+
+    .viewPageBtnWrap {
+      position: absolute;
+      left: -100px;
+      top: 0;
+      width: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .viewPageBtn {
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      border-radius: 50%;
+      background-color: #ddd;
+      font-size: 12px;
+      cursor: pointer;
+      margin-top: 20px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    .viewContent {
+      width: 375px;
+      height: 667px;
+      background-color: #fff;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 50px;
+      background-color: rgba(255, 255, 255, 0.2);
+      position: absolute;
+      bottom: 15px;
+      left: 172.5px;
+      border-radius: 50%;
+    }
+  }
+}

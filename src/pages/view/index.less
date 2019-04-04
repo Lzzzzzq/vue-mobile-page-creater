@@ -1,0 +1,57 @@
+.viewWrap {
+  // background-color: lightblue;
+  min-height: 100vh;
+}
+::-webkit-scrollbar-track-piece {
+  width: 6px
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 0
+}
+
+::-webkit-scrollbar-thumb {
+  height: 50px;
+  border-radius: 3px;
+  background-color: rgba(0,0,0,.4)
+}
+.flip-list-move {
+  transition: transform 0.5s;
+}
+.no-move {
+  transition: transform 0s;
+}
+.ghost {
+  opacity: 0.5;
+  background: #c8ebfb;
+}
+.list-group-item {
+  cursor: move;
+}
+.viewCptItem,.active {
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: 1px dashed transparent;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+}
+.viewCptItem {
+  &:after {
+    border-color: #ddd;
+  }
+}
+.active {
+  &:after {
+    border-color: #e93030;
+  }
+}
