@@ -1,4 +1,8 @@
-# page-creater
+# vue-mobile-page-creater
+
+基于 vue 的移动端页面可视化搭建工具（仅思路）
+
+![page.png](https://i.loli.net/2019/04/04/5ca5ad476bf58.png)
 
 ## Project setup
 ```
