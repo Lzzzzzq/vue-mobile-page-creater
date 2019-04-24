@@ -18,7 +18,19 @@ export default {
   props: {
     list: {
       type: Array,
-      default: () => []
+      default: () => [
+        {
+          title: '标题',
+          date: '2018-08-08'
+        }
+      ]
+    }
+  },
+  methods: {
+    getConfig: function () {
+      return {
+        list: this.list
+      }
     }
   }
 }

@@ -22,6 +22,7 @@
                 'viewCptItem': edit,
                 'active': activeIndex === index
               }"
+              :ref="`component-${index}`"
             ></component>
           </template>
         </transition-group>
@@ -137,11 +138,12 @@ export default {
     handleChangeProps: function (index) {
       if (!this.edit) return
       this.activeIndex = index
+      const cptRef = this.$refs[`component-${index}`][0]
       this.pushMsg({
         type: 'changeProps',
         data: {
           index,
-          props: this.config[index].props
+          props: cptRef.getConfig()
         }
       })
     }

@@ -18,6 +18,14 @@ export default {
       type: Boolean,
       default: true
     }
+  },
+  methods: {
+    getConfig: function () {
+      return {
+        height: this.height,
+        transparent: this.transparent
+      }
+    }
   }
 }
 </script>
