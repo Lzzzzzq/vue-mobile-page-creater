@@ -25,7 +25,7 @@ export default {
       onload: false,
       viewFrame: null,
       edit: false,
-      editIndex: -1,
+      editKey: '',
       editProps: {}
     }
   },
@@ -64,7 +64,7 @@ export default {
            * 修改组件配置
            */
           this.edit = true
-          this.editIndex = data.data.index
+          this.editKey = data.data.key
           this.editProps = data.data.props
           break
         case 'handleDelCpt':
@@ -72,14 +72,21 @@ export default {
            * 删除了选中组件
            */
           this.edit = false
-          this.editIndex = -1
+          this.editKey = ''
           break
         case 'handleCloseEdit':
           /**
            * 关闭了编辑模式
            */
           this.edit = false
-          this.editIndex = -1
+          this.editKey = ''
+          break
+        case 'initKey':
+        /**
+         * 初始化 key 值
+         */
+          this.edit = false
+          this.editKey = ''
           break
         default:
           break
@@ -101,7 +108,7 @@ export default {
       this.pushMsg({
         type: 'changeProps',
         data: {
-          index: this.editIndex,
+          key: this.editKey,
           props: cont
         }
       })

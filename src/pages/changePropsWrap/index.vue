@@ -34,6 +34,9 @@ export default {
     }
   },
   watch: {
+    /**
+     * props 改变
+     */
     editProps: {
       handler: function (newProps) {
         this.handleChangeProps(newProps)

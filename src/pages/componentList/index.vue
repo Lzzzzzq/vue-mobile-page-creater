@@ -29,13 +29,19 @@ export default {
     }
   },
   methods: {
-    handleAddComponent: function ({ component, props }) {
+    /**
+     * 添加组件
+     */
+    handleAddComponent: function ({ component, container }) {
+      const componentInfo = {
+        component
+      }
+      if (container) {
+        componentInfo.child = []
+      }
       this.pushMsg({
         type: 'addCpt',
-        data: {
-          component,
-          props: props || {}
-        }
+        data: componentInfo
       })
     }
   }

@@ -29,6 +29,9 @@ export default {
     }
   },
   methods: {
+    /**
+     * iframe 加载后执行
+     */
     onLoad: function () {
       this.handleOnLoad(this.$refs.frame)
     },

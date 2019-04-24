@@ -12,7 +12,7 @@ export default new Router({
     }, {
       path: '/view',
       name: 'view',
-      component: () => import('./pages/view')
+      component: () => import('./pages/view/deep-wrap')
     }
   ]
 })
