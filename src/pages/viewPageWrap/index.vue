@@ -1,7 +1,7 @@
 <template>
   <div class="viewPageWrap">
     <div class="viewWrap">
-      <iframe src="/#/view" frameborder="0" class="viewContent" @load="onLoad" ref="frame"></iframe>
+      <iframe :src="url" frameborder="0" class="viewContent" @load="onLoad" ref="frame"></iframe>
       <div class="viewPageBtnWrap">
         <div class="viewPageBtn" @click="handleGetConfig">获取配置</div>
         <div class="viewPageBtn" @click="handleChangeTheme">{{dark ? '白版' : '黑版'}}</div>
@@ -20,6 +20,11 @@ export default {
     },
     pushMsg: {
       type: Function
+    }
+  },
+  computed: {
+    url: function () {
+      return `${window.location.protocol}//${window.location.host + window.location.pathname}#/view`
     }
   },
   data () {
